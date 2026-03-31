@@ -104,3 +104,49 @@ for (
             "reponse_courte": reponse[:50] + "...",
         }
     )
+print(resultat)
+
+
+import csv
+
+nom_propre = MODEL_NAME.replace("/", "_").replace(":", "_")
+nom_fichier_csv = f"resultats_{nom_propre}.csv"
+
+fieldnames = [
+    "Nombre de tokens",
+    "Durée totale de réponse",
+    "Temps pour recevoir le premier token",
+]
+
+# Ouvrir le fichier en mode append ('a') et écrire l'en-tête seulement si le fichier est nouveau
+with open(nom_fichier_csv, mode="w", newline="", encoding="utf-8") as file:
+    writer = csv.DictWriter(file, fieldnames=fieldnames)
+    writer.writeheader()
+
+    # Écrire les lignes des résultats
+    for i in resultat[MODEL_NAME]:
+        writer.writerow(
+            {
+                "Nombre de tokens": i["nb_tokens_attendus"],
+                "Durée totale de réponse": i["duree_totale"],
+                "Temps pour recevoir le premier token": i["ttft"],
+            }
+        )
+    print("fichier sauvegardé!!")
+
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
+nom_fichier_csv = "resultats_qwen_qwen3-coder-30b.csv"  # changer le nom du fichier csv en fonction du modèle testé
+df = pd.read_csv(nom_fichier_csv)
+
+plt.figure(figsize=(10, 6))
+plt.title("{MODEL_NAME} - Durée totale de réponse en fonction du nombre de tokens")
+plt.plot(
+    df["Nombre de tokens"],
+    df["Durée totale de réponse"],
+    marker="o",
+    label="qwen/qwen3-coder-30b",
+    color="blue",
+)
