@@ -10,23 +10,34 @@ prompt = "Hello"
 
 def envoyer_requete(prompt):
     start_time = time.time()
-    # Envoie une requête de chat
+
     response = client.chat.completions.create(
         model=MODEL,
-        messages=[{"role": "system", "content": prompt}],
+        messages=[
+            {"role": "user", "content": prompt}
+        ],  # 'user' est souvent mieux pour tester
         stream=True,
         max_tokens=100,
         temperature=0,
     )
+
     final_answer = ""
     ttft = None
+
     for chunk in response:
-        if "choices" in chunk and len(chunk["choices"]) > 0:
-            content = chunk["choices"][0]["delta"].get("content", "")
+        # On accède aux attributs avec des points . au lieu de [""]
+        if chunk.choices:
+            content = chunk.choices[0].delta.content
+
+            # content peut être None ou une chaîne vide au tout début
             if content:
-                final_answer += content
                 if ttft is None:
                     ttft = time.time() - start_time
+
+                final_answer += content
+                # Optionnel : voir le texte s'afficher en temps réel
+                print(content, end="", flush=True)
+
     duration = time.time() - start_time
     return final_answer, duration, ttft
 
