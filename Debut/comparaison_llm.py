@@ -132,7 +132,7 @@ with open(nom_fichier_csv, mode="w", newline="", encoding="utf-8") as file:
                 "Temps pour recevoir le premier token": i["ttft"],
             }
         )
-    print("fichier sauvegardé!!")
+    print("fichier suavegardé!!!")
 
 
 import matplotlib.pyplot as plt
