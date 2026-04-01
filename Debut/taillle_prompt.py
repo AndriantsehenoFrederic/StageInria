@@ -5,7 +5,7 @@ import json
 # Crée un client OpenAI pointant vers le serveur vLLM local
 client = OpenAI(base_url="http://localhost:8000/v1", api_key="none")
 MODEL = "./Qwen2.5-3B-Instruct"
-prompt = "Hello"
+prompt = "lol" * 512
 
 
 def envoyer_requete(prompt):
@@ -22,8 +22,6 @@ def envoyer_requete(prompt):
     )
     taille_prompt = response.usage.prompt_tokens
     return taille_prompt
-
-    return response
 
 
 final_answer = envoyer_requete(prompt)

@@ -1,69 +1,90 @@
 from openai import OpenAI
 import time
 import json
+import asyncio
 
 # Crée un client OpenAI pointant vers le serveur vLLM local
 client = OpenAI(base_url="http://localhost:8000/v1", api_key="none")
 MODEL = "./Qwen2.5-3B-Instruct"
-prompt = "Hello"
 
 
-def envoyer_requete(prompt):
+async def envoyer_requete(id_prompt, prompt):
     start_time = time.time()
-
-    response = client.chat.completions.create(
-        model=MODEL,
-        messages=[
-            {"role": "user", "content": prompt}
-        ],  # 'user' est souvent mieux pour tester
-        stream=True,
-        max_tokens=100,
-        temperature=0,
-    )
-
     final_answer = ""
     ttft = None
 
-    for chunk in response:
-        # On accède aux attributs avec des points . au lieu de [""]
-        if chunk.choices:
-            content = chunk.choices[0].delta.content
+    try:
+        response = await client.chat.completions.create(
+            model=MODEL,
+            messages=[
+                {"role": "user", "content": prompt}
+            ],  # 'user' est souvent mieux pour tester
+            stream=True,
+            max_tokens=100,
+            temperature=0,
+        )
 
-            # content peut être None ou une chaîne vide au tout début
-            if content:
-                if ttft is None:
-                    ttft = time.time() - start_time
+        async for chunk in response:
+            if chunk.choices:
+                content = chunk.choices[0].delta.content
+                if content:
+                    if ttft is None:
+                        ttft = time.time() - start_time
+                        print(f"Req{id_prompt}, ttft{ttft}")
 
-                final_answer += content
-                # Optionnel : voir le texte s'afficher en temps réel
-                print(content, end="", flush=True)
+        duration = time.time() - start_time
 
-    duration = time.time() - start_time
-    return final_answer, duration, ttft
+    except Exception as e:
+        print(f"Erreur pour la requête {id_prompt} : {e}")
+        return 0, 0
+
+    return duration, ttft
 
 
-final_answer, duration, ttft = envoyer_requete(prompt)
-print(f"Final answer: {final_answer}")
-print(f"Duration: {duration}")
-print(f"TTFT: {ttft}")
+async def main(nombre_requetes):
+    resultats = []  # Liste pour stocker les dictionnaires de résultats
 
-# for line in response.iter_lines():
-#     if not line:
-#         continue
-#     if line.startswith(b"data: "):
-#         json_str = line[6:].decode("utf-8").strip()
-#         if json_str == "[DONE]":
-#             break
-#         try:
-#             chunk = json.loads(json_str)
-#             if "choices" in chunk and len(chunk["choices"]) > 0:
-#                 content = chunk["choices"][0]["delta"].get("content", "")
-#                 print(
-#                     content, end="", flush=True
-#                 )  # Affiche le contenu au fur et à mesure
-#         except json.JSONDecodeError:
-#             print(f"Erreur de décodage JSON : {json_str}")
-#             continue
+    tailles_tokens = [
+        512,
+        1024,
+        2048,
+        4096,
+        16384,
+        32768,
+        47104,
+        65536,
+        98304,
+        131072,
+    ]  # Tailles de prompt à tester
 
-# # Affiche la réponse générée par le modèle
-# print(response.choices[0].message.content)
+    for q in tailles_tokens:
+        print(
+            f"\n--- Test avec {q} tokens (x{nombre_requetes} requêtes simultanées) ---"
+        )
+        contenu_prompt = "lol " * q
+        taches = [envoyer_requete(i, contenu_prompt) for i in range(nombre_requetes)]
+        retours = await asyncio.gather(*taches)
+        total_duration = sum(r[0] for r in retours)
+        total_ttft = sum(r[1] for r in retours)
+        duree_moyenne = total_duration / nombre_requetes
+        ttft_moyen = total_ttft / nombre_requetes
+        resultats.append(
+            {
+                "taille_tokens": q,
+                "duree_moyenne": round(duree_moyenne, 4),
+                "ttft_moyen": round(ttft_moyen, 4),
+            }
+        )
+
+    # Sauvegarde en JSON
+    with open("resultats_bench.json", "w") as f:
+        json.dump(resultats, f, indent=4)
+
+    print("\nTests terminés ! Résultats sauvegardés.")
+    return resultats
+
+
+if __name__ == "__main__":
+    n_req = 5  # Nombre de requêtes simultanées à tester
+    final_data = asyncio.run(main(n_req))
+    print(final_data)
