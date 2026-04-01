@@ -26,3 +26,4 @@ def envoyer_requete(prompt):
 
 final_answer = envoyer_requete(prompt)
 print(final_answer)
+

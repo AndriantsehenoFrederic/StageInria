@@ -47,23 +47,4 @@ print(f"Final answer: {final_answer}")
 print(f"Duration: {duration}")
 print(f"TTFT: {ttft}")
 
-# for line in response.iter_lines():
-#     if not line:
-#         continue
-#     if line.startswith(b"data: "):
-#         json_str = line[6:].decode("utf-8").strip()
-#         if json_str == "[DONE]":
-#             break
-#         try:
-#             chunk = json.loads(json_str)
-#             if "choices" in chunk and len(chunk["choices"]) > 0:
-#                 content = chunk["choices"][0]["delta"].get("content", "")
-#                 print(
-#                     content, end="", flush=True
-#                 )  # Affiche le contenu au fur et à mesure
-#         except json.JSONDecodeError:
-#             print(f"Erreur de décodage JSON : {json_str}")
-#             continue
 
-# # Affiche la réponse générée par le modèle
-# print(response.choices[0].message.content)

@@ -1,0 +1,866 @@
+{
+    "1 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.5829,
+            "ttft_moyen": 0.55
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 0.7939,
+            "ttft_moyen": 0.0196
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.0885,
+            "ttft_moyen": 0.0233
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 0.8723,
+            "ttft_moyen": 0.027
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 1.9476,
+            "ttft_moyen": 0.0678
+        }
+    ],
+    "2 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.0921,
+            "ttft_moyen": 0.0299
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 0.8786,
+            "ttft_moyen": 0.0366
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.1646,
+            "ttft_moyen": 0.029
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 1.7419,
+            "ttft_moyen": 0.0361
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 2.1121,
+            "ttft_moyen": 0.1172
+        }
+    ],
+    "3 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.0552,
+            "ttft_moyen": 0.0329
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 0.8951,
+            "ttft_moyen": 0.0289
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.1901,
+            "ttft_moyen": 0.035
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 1.7579,
+            "ttft_moyen": 0.0507
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 2.2017,
+            "ttft_moyen": 0.172
+        }
+    ],
+    "4 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.0909,
+            "ttft_moyen": 0.033
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 0.8698,
+            "ttft_moyen": 0.0337
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.1963,
+            "ttft_moyen": 0.0388
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 1.7668,
+            "ttft_moyen": 0.0581
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 2.2388,
+            "ttft_moyen": 0.2216
+        }
+    ],
+    "5 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.0856,
+            "ttft_moyen": 0.0357
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 0.905,
+            "ttft_moyen": 0.0352
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.2247,
+            "ttft_moyen": 0.0489
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 1.8039,
+            "ttft_moyen": 0.0735
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 2.3285,
+            "ttft_moyen": 0.2604
+        }
+    ],
+    "6 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.1373,
+            "ttft_moyen": 0.0377
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 0.8965,
+            "ttft_moyen": 0.0397
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.2296,
+            "ttft_moyen": 0.0545
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 1.8171,
+            "ttft_moyen": 0.0825
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 2.4084,
+            "ttft_moyen": 0.3166
+        }
+    ],
+    "7 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.122,
+            "ttft_moyen": 0.043
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 0.9258,
+            "ttft_moyen": 0.0481
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.2567,
+            "ttft_moyen": 0.0685
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 1.8485,
+            "ttft_moyen": 0.0934
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 2.4751,
+            "ttft_moyen": 0.361
+        }
+    ],
+    "8 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.1232,
+            "ttft_moyen": 0.0484
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 0.9785,
+            "ttft_moyen": 0.064
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.2734,
+            "ttft_moyen": 0.0833
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.2366,
+            "ttft_moyen": 0.7032
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 2.5497,
+            "ttft_moyen": 0.4101
+        }
+    ],
+    "9 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.165,
+            "ttft_moyen": 0.0547
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 0.9438,
+            "ttft_moyen": 0.0607
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.2895,
+            "ttft_moyen": 0.0884
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 1.8236,
+            "ttft_moyen": 0.1267
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 2.6423,
+            "ttft_moyen": 0.4518
+        }
+    ],
+    "10 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.1554,
+            "ttft_moyen": 0.0619
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 0.994,
+            "ttft_moyen": 0.0768
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.3577,
+            "ttft_moyen": 0.0868
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 1.7514,
+            "ttft_moyen": 0.1434
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 2.7105,
+            "ttft_moyen": 0.5029
+        }
+    ],
+    "11 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.2277,
+            "ttft_moyen": 0.0739
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 0.9882,
+            "ttft_moyen": 0.0847
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.3477,
+            "ttft_moyen": 0.1029
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 1.7485,
+            "ttft_moyen": 0.1599
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 2.8623,
+            "ttft_moyen": 0.5567
+        }
+    ],
+    "12 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.2473,
+            "ttft_moyen": 0.1139
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.019,
+            "ttft_moyen": 0.0995
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.465,
+            "ttft_moyen": 0.1176
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.0312,
+            "ttft_moyen": 0.1688
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 2.9659,
+            "ttft_moyen": 0.6036
+        }
+    ],
+    "13 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.299,
+            "ttft_moyen": 0.088
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.0989,
+            "ttft_moyen": 0.1014
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.4718,
+            "ttft_moyen": 0.1333
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 1.708,
+            "ttft_moyen": 0.1911
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 3.1793,
+            "ttft_moyen": 0.6519
+        }
+    ],
+    "14 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.3439,
+            "ttft_moyen": 0.0945
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.1175,
+            "ttft_moyen": 0.1088
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.5099,
+            "ttft_moyen": 0.1358
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.1449,
+            "ttft_moyen": 0.2084
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 3.1677,
+            "ttft_moyen": 0.7065
+        }
+    ],
+    "15 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.3741,
+            "ttft_moyen": 0.1079
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.1894,
+            "ttft_moyen": 0.1188
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.5435,
+            "ttft_moyen": 0.1539
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.069,
+            "ttft_moyen": 0.2259
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 3.3177,
+            "ttft_moyen": 0.7582
+        }
+    ],
+    "16 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.4089,
+            "ttft_moyen": 0.1127
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.2037,
+            "ttft_moyen": 0.1272
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.5594,
+            "ttft_moyen": 0.154
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.3349,
+            "ttft_moyen": 0.2341
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 3.4484,
+            "ttft_moyen": 0.8033
+        }
+    ],
+    "17 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.5027,
+            "ttft_moyen": 0.1224
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.2295,
+            "ttft_moyen": 0.1414
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.6101,
+            "ttft_moyen": 0.1747
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.2905,
+            "ttft_moyen": 0.2603
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 3.4849,
+            "ttft_moyen": 0.858
+        }
+    ],
+    "18 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.4891,
+            "ttft_moyen": 0.14
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.2626,
+            "ttft_moyen": 0.1506
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.6831,
+            "ttft_moyen": 0.1875
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.6018,
+            "ttft_moyen": 0.2772
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 3.6613,
+            "ttft_moyen": 0.9102
+        }
+    ],
+    "19 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.5347,
+            "ttft_moyen": 0.1441
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.3235,
+            "ttft_moyen": 0.1663
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.7143,
+            "ttft_moyen": 0.1851
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.1979,
+            "ttft_moyen": 0.2863
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 4.2415,
+            "ttft_moyen": 1.2069
+        }
+    ],
+    "20 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.6812,
+            "ttft_moyen": 0.1586
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.3787,
+            "ttft_moyen": 0.1826
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.7494,
+            "ttft_moyen": 0.2024
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.7008,
+            "ttft_moyen": 0.3069
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 3.8487,
+            "ttft_moyen": 1.0184
+        }
+    ],
+    "21 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.634,
+            "ttft_moyen": 0.1671
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.37,
+            "ttft_moyen": 0.1875
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.7585,
+            "ttft_moyen": 0.2184
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.6938,
+            "ttft_moyen": 0.3303
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 3.9408,
+            "ttft_moyen": 1.0725
+        }
+    ],
+    "22 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.6477,
+            "ttft_moyen": 0.1801
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.3789,
+            "ttft_moyen": 0.2021
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.852,
+            "ttft_moyen": 0.2295
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.7497,
+            "ttft_moyen": 0.349
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 4.0847,
+            "ttft_moyen": 1.1231
+        }
+    ],
+    "23 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.6837,
+            "ttft_moyen": 0.193
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.4164,
+            "ttft_moyen": 0.2078
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.9378,
+            "ttft_moyen": 0.2438
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.7061,
+            "ttft_moyen": 0.3708
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 4.2146,
+            "ttft_moyen": 1.1816
+        }
+    ],
+    "24 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.7368,
+            "ttft_moyen": 0.208
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.4543,
+            "ttft_moyen": 0.229
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.9007,
+            "ttft_moyen": 0.2651
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.71,
+            "ttft_moyen": 0.3826
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 4.2932,
+            "ttft_moyen": 1.2306
+        }
+    ],
+    "25 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.7301,
+            "ttft_moyen": 0.2225
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.4911,
+            "ttft_moyen": 0.2459
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 1.9469,
+            "ttft_moyen": 0.2876
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.8221,
+            "ttft_moyen": 0.411
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 4.6759,
+            "ttft_moyen": 1.4918
+        }
+    ],
+    "26 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.7632,
+            "ttft_moyen": 0.2444
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.5145,
+            "ttft_moyen": 0.264
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 2.0153,
+            "ttft_moyen": 0.2886
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.8536,
+            "ttft_moyen": 0.4726
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 4.5145,
+            "ttft_moyen": 1.3353
+        }
+    ],
+    "27 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.7805,
+            "ttft_moyen": 0.2584
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.5349,
+            "ttft_moyen": 0.2768
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 2.0549,
+            "ttft_moyen": 0.3102
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.8003,
+            "ttft_moyen": 0.4548
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 4.5733,
+            "ttft_moyen": 1.3939
+        }
+    ],
+    "28 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.8454,
+            "ttft_moyen": 0.2746
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.5745,
+            "ttft_moyen": 0.2961
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 2.0171,
+            "ttft_moyen": 0.3214
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 2.8311,
+            "ttft_moyen": 0.4723
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 4.6998,
+            "ttft_moyen": 1.4508
+        }
+    ],
+    "29 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.8753,
+            "ttft_moyen": 0.2878
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.6055,
+            "ttft_moyen": 0.3103
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 2.154,
+            "ttft_moyen": 0.3448
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 3.0444,
+            "ttft_moyen": 0.4873
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 4.7783,
+            "ttft_moyen": 1.5061
+        }
+    ],
+    "30 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.9057,
+            "ttft_moyen": 0.3046
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.6535,
+            "ttft_moyen": 0.3337
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 2.1347,
+            "ttft_moyen": 0.3656
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 3.6283,
+            "ttft_moyen": 0.8274
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 4.917,
+            "ttft_moyen": 1.5673
+        }
+    ],
+    "31 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.9175,
+            "ttft_moyen": 0.3267
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.6716,
+            "ttft_moyen": 0.3505
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 2.1594,
+            "ttft_moyen": 0.378
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 3.0775,
+            "ttft_moyen": 0.5244
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 4.9342,
+            "ttft_moyen": 1.6168
+        }
+    ],
+    "32 requ\u00eates": [
+        {
+            "taille_tokens": 512,
+            "duree_moyenne": 1.9843,
+            "ttft_moyen": 0.3441
+        },
+        {
+            "taille_tokens": 1024,
+            "duree_moyenne": 1.774,
+            "ttft_moyen": 0.4479
+        },
+        {
+            "taille_tokens": 2048,
+            "duree_moyenne": 2.2303,
+            "ttft_moyen": 0.3981
+        },
+        {
+            "taille_tokens": 4096,
+            "duree_moyenne": 3.1446,
+            "ttft_moyen": 0.5419
+        },
+        {
+            "taille_tokens": 16384,
+            "duree_moyenne": 5.0603,
+            "ttft_moyen": 1.6787
+        }
+    ]
+}
