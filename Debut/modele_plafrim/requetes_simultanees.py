@@ -43,9 +43,8 @@ async def envoyer_requete(id_prompt, prompt):
 
 async def main():
     resultats = {}  # Dictionnaire pour stocker les dictionnaires de résultats
-    nbr_requetes=[]
-    for i in range(1,33):
-        nbr_requetes.append(i)
+    nbr_requetes = [1, 2, 4, 8, 16, 32]
+
     print(f"Nombre de requêtes simultanées à tester : {nbr_requetes}")
     tailles_tokens = [
         512,
@@ -59,28 +58,32 @@ async def main():
         # 98304,
         # 131072,
     ]  # Tailles de prompt à tester
+    nb_repetitions = 10  # à changer si on veut
     for n in nbr_requetes:
-        print(f"\n--- Test avec {n} requêtes simultanées ---")
-        resultats[f"{n} requêtes"] = []  # Initialisation de la liste pour ce nombre de requêtes
+        nom_test = f"{n} requêtes"
+        print(f"Test avec {n} requêtes simultanées")
+        resultats[nom_test] = []
+
         for q in tailles_tokens:
-            contenu_prompt = "lol " * (q-30)  # Génère un prompt de la taille souhaitée (en tokens) ici il faut enlevé 30 pour avoir le nombres de tokens requis
-            taches = [envoyer_requete(i, contenu_prompt) for i in range(n)]
-            retours = await asyncio.gather(*taches)
-            total_duration = sum(r[0] for r in retours)
-            total_ttft = sum(r[1] for r in retours)
-            duree_moyenne = total_duration / n
-            ttft_moyen = total_ttft / n
-            resultats[f"{n} requêtes"].append(
+            print(f"Tokens: {q} (Moyenne sur {nb_repetitions} essais)")
+
+            for essai in range(nb_repetitions):
+                contenu_prompt = "lol " * (
+                    q - 30
+                )  # on enlève 30 pour pile au bon nombres de tokens
+                taches = [envoyer_requete(i, contenu_prompt) for i in range(n)]
+                retours = await asyncio.gather(*taches)
+                durer_essai = sum(r[0] for r in retours) / n
+                ttft_essai = sum(r[1] for r in retours) / n
+
+            resultats[nom_test].append(
                 {
                     "taille_tokens": q,
-                    "duree_moyenne": round(duree_moyenne, 4),
-                    "ttft_moyen": round(ttft_moyen, 4),
+                    "essai": essai,
+                    "duree_moyenne": round(durer_essai, 4),
+                    "ttft_moyen": round(ttft_essai, 4),
                 }
             )
-
-    # Sauvegarde en JSON
-    with open("resultats_bench.json", "w") as f:
-        json.dump(resultats, f, indent=4)
 
     print("\nTests terminés ! Résultats sauvegardés.")
     return resultats
@@ -89,3 +92,5 @@ async def main():
 if __name__ == "__main__":
     final_data = asyncio.run(main())
     print(final_data)
+    with open(f"resultats_requetes_simultanees.json", "w") as f:
+        json.dump(final_data, f, indent=4)
