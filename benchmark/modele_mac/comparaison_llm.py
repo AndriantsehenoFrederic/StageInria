@@ -1,7 +1,10 @@
 import requests
 import json
 import time
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 qwen_vl_32b_instruct_mlx_prompts = {
     "prompt512": "lol" * 503,
@@ -18,7 +21,7 @@ qwen_vl_32b_instruct_mlx_prompts = {
 
 # Configuration
 URL = "https://unpalpablely-vibronic-leonore.ngrok-free.dev/api/v1/chat/completions"
-API_KEY = "sk-88cbf160a9574be489dc529a29e5aab7"
+API_KEY = os.getenv("API_KEY")
 MODEL_NAME = "qwen3-vl-32b-instruct-mlx"  # Ne pas oublier de changer le modèle ici
 
 
