@@ -42,51 +42,36 @@ async def envoyer_requete(id_prompt, prompt):
 
 
 async def main():
-    resultats = {}  # Dictionnaire pour stocker les dictionnaires de résultats
+    resultats_bruts = []
     nbr_requetes = [1, 2, 4, 8, 16, 32]
+    tailles_tokens = [512, 1024, 2048, 4096, 16384]
+    nb_repetitions = 10
 
-    print(f"Nombre de requêtes simultanées à tester : {nbr_requetes}")
-    tailles_tokens = [
-        512,
-        1024,
-        2048,
-        4096,
-        16384,
-        # 32768,
-        # 47104,
-        # 65536,
-        # 98304,
-        # 131072,
-    ]  # Tailles de prompt à tester
-    nb_repetitions = 10  # à changer si on veut
     for n in nbr_requetes:
-        nom_test = f"{n} requêtes"
-        print(f"Test avec {n} requêtes simultanées")
-        resultats[nom_test] = []
+        print(f"Test avec {n} requêtes simultanées...")
 
         for q in tailles_tokens:
-            print(f"Tokens: {q} (Moyenne sur {nb_repetitions} essais)")
+            print(f"  Tokens: {q}")
 
             for essai in range(nb_repetitions):
                 contenu_prompt = "lol " * (
                     q - 30
-                )  # on enlève 30 pour pile au bon nombres de tokens
+                )  # on enlève 30 pour avoir pile la bonne taille de tokens, peut etre changer en fonction du modèle utilisé
                 taches = [envoyer_requete(i, contenu_prompt) for i in range(n)]
                 retours = await asyncio.gather(*taches)
-                durer_essai = sum(r[0] for r in retours) / n
-                ttft_essai = sum(r[1] for r in retours) / n
+                for r in retours:
+                    resultats_bruts.append(
+                        {
+                            "nb_requetes_simultanees": n,
+                            "taille_tokens": q,
+                            "essai_index": essai,
+                            "duree": r[0],
+                            "ttft": r[1],
+                        }
+                    )
 
-            resultats[nom_test].append(
-                {
-                    "taille_tokens": q,
-                    "essai": essai,
-                    "duree_moyenne": round(durer_essai, 4),
-                    "ttft_moyen": round(ttft_essai, 4),
-                }
-            )
-
-    print("\nTests terminés ! Résultats sauvegardés.")
-    return resultats
+    print(f"\nTests terminés ! {len(resultats_bruts)} mesures collectées.")
+    return resultats_bruts
 
 
 if __name__ == "__main__":
