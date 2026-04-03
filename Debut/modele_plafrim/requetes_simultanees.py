@@ -44,7 +44,7 @@ async def envoyer_requete(id_prompt, prompt):
 async def main():
     resultats_bruts = []
     nbr_requetes = [1, 2, 4, 8, 16, 32]
-    tailles_tokens = [512, 1024, 2048, 4096, 16384]
+    tailles_tokens = [512, 1024, 2048, 4096, 16384, 32768, 47104, 65536, 98304, 131072]
     nb_repetitions = 10
 
     for n in nbr_requetes:
@@ -77,5 +77,5 @@ async def main():
 if __name__ == "__main__":
     final_data = asyncio.run(main())
     print(final_data)
-    with open(f"resultats_requetes_simultanees.json", "w") as f:
+    with open(f"resultats_{MODEL.replace('./', '')}.json", "w") as f:
         json.dump(final_data, f, indent=4)
