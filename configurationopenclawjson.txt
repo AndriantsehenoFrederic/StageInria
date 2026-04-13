@@ -1,0 +1,12 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/home/node/.openclaw/workspace",
+      "model": {
+        "primary": "custom-unpalpablely-vibronic-leonore-ngrok-free-dev/qwen/qwen3-30b-a3b-2507"
+      },
+      "models": {
+        "custom-unpalpablely-vibronic-leonore-ngrok-free-dev/qwen/qwen3-30b-a3b-2507": {
+          "alias": "Qwen3"
+        }
+      },
